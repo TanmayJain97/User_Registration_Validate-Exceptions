@@ -4,20 +4,20 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UserRegistrationUC12 {
+public class UserRegistrationTest {
 
-	private UserRegValidate validator;
+	private UserRegValidation validator;
 
 	@Before
 	public void init() {
-		validator = new UserRegValidate();
+		validator = new UserRegValidation();
 	}
 
 	//Run Test for FirstName - 1 Happy and 1 Sad
 	@Test
 	public void givenFirstName_WhenValid_ShouldReturnTrue() {
 		try {
-			assertTrue(validator.validateFName("Tanmay"));
+			assertTrue(validator.validateFName.compare("Tanmay"));
 		} catch (UserDetailsInvalidException exception) {
 			exception.printStackTrace();
 		}
@@ -26,7 +26,7 @@ public class UserRegistrationUC12 {
 	@Test
 	public void givenFirstName_WhenInValid_ShouldThrowException() {
 		try {
-			assertFalse(validator.validateFName("Bh"));
+			assertFalse(validator.validateFName.compare("Bh"));
 		} catch (UserDetailsInvalidException exception) {
 			exception.printStackTrace();
 		}
@@ -36,7 +36,7 @@ public class UserRegistrationUC12 {
 	@Test
 	public void givenLastName_WhenValid_ShouldReturnTrue() {
 		try {
-			assertTrue(validator.validateLName("Jain"));
+			assertTrue(validator.validateLName.compare("Jain"));
 		} catch (UserDetailsInvalidException exception) {
 			exception.printStackTrace();
 		}
@@ -45,7 +45,7 @@ public class UserRegistrationUC12 {
 	@Test
 	public void givenLastName_WhenInValid_ShouldThrowException() {
 		try {
-			assertFalse(validator.validateLName("Jain0"));
+			assertFalse(validator.validateLName.compare("Jain0"));
 		} catch (UserDetailsInvalidException exception) {
 			exception.printStackTrace();
 		}
@@ -55,7 +55,7 @@ public class UserRegistrationUC12 {
 	@Test
 	public void givenEmail_WhenValid_ShouldReturnTrue() {
 		try {
-			assertTrue(validator.validateEmail("mail.tanmay@gmai.com"));
+			assertTrue(validator.validateEmail.compare("mail.tanmay@gmai.com"));
 		} catch (UserDetailsInvalidException exception) {
 			exception.printStackTrace();
 		}
@@ -64,7 +64,7 @@ public class UserRegistrationUC12 {
 	@Test
 	public void givenEmail_WhenInValid_ShouldThrowException() {
 		try {
-			assertFalse(validator.validateEmail("mail@.com"));
+			assertFalse(validator.validateEmail.compare("mail@.com"));
 		} catch (UserDetailsInvalidException exception) {
 			exception.printStackTrace();
 		}
@@ -74,7 +74,7 @@ public class UserRegistrationUC12 {
 	@Test
 	public void givenPhoneNum_WhenValid_ShouldReturnTrue() {
 		try {
-			assertTrue(validator.validatePhone("874 9855201458"));
+			assertTrue(validator.validatePhone.compare("874 9855201458"));
 		} catch (UserDetailsInvalidException exception) {
 			exception.printStackTrace();
 		}
@@ -83,7 +83,7 @@ public class UserRegistrationUC12 {
 	@Test
 	public void givenPhoneNum_WhenInValid_ShouldThrowException() {
 		try {
-			assertFalse(validator.validatePhone("54681"));
+			assertFalse(validator.validatePhone.compare("54681"));
 		} catch (UserDetailsInvalidException exception) {
 			exception.printStackTrace();
 		}
@@ -93,7 +93,7 @@ public class UserRegistrationUC12 {
 	@Test
 	public void givenPassword_WhenValid_ShouldReturnTrue() {
 		try {
-			assertTrue(validator.validatePassword("loPs1&jdlsaf"));
+			assertTrue(validator.validatePassword.compare("loPs1&jdlsaf"));
 		} catch (UserDetailsInvalidException exception) {
 			exception.printStackTrace();
 		}
@@ -102,7 +102,7 @@ public class UserRegistrationUC12 {
 	@Test
 	public void givenPassword_WhenInValid_ShouldThrowException() {
 		try {
-			assertFalse(validator.validatePassword("Tanmay0101"));
+			assertFalse(validator.validatePassword.compare("Tanmay0101"));
 		} catch (UserDetailsInvalidException exception) {
 			exception.printStackTrace();
 		}
